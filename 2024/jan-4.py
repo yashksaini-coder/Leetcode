@@ -14,7 +14,6 @@ class Solution:
 
         return count
 
-# Example usage:
 solution = Solution()
 nums = [1, 2, 2, 1, 1, 3]
 print(solution.minOperations(nums))
