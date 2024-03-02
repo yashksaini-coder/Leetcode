@@ -9,5 +9,4 @@ class Solution(object):
         
         # Sort the array of squares
         squares.sort()
-        
         return squares
