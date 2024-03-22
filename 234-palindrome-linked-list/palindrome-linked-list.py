@@ -16,7 +16,6 @@ class Solution(object):
         fast = head
         prev = None
 
-        # Find the middle of the linked list and reverse the first half
         while fast and fast.next:
             fast = fast.next.next
             temp = slow.next
