@@ -1,10 +1,16 @@
 class Solution:
     def checkValidString(self, s):
-        low = high = 0
+        leftMin, leftMax = 0, 0
+
         for c in s:
-            low += 1 if c == '(' else -1
-            high += 1 if c != ')' else -1
-            if high < 0:
+            if c == "(":
+                leftMin, leftMax = leftMin + 1, leftMax + 1
+            elif c == ")":
+                leftMin, leftMax = leftMin - 1, leftMax - 1
+            else:
+                leftMin, leftMax = leftMin - 1, leftMax + 1
+            if leftMax < 0:
                 return False
-            low = max(low, 0)
-        return low == 0
+            if leftMin < 0:
+                leftMin = 0
+        return leftMin == 0
