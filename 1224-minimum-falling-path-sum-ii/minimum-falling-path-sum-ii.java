@@ -1,4 +1,4 @@
-class Solution {
+class Main {
     public int minFallingPathSum(int[][] grid) {
         int n = grid.length, m = grid[0].length;
         int res = Integer.MAX_VALUE;
