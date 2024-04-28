@@ -1,5 +1,7 @@
-class Main {
-    public int minFallingPathSum(int[][] grid) {
+import java.util.*;
+
+class Solution{
+    public static int minimum_falling_path_sum(int[][] grid){
         int n = grid.length, m = grid[0].length;
         int res = Integer.MAX_VALUE;
         int[][] dp = new int[n][m];
