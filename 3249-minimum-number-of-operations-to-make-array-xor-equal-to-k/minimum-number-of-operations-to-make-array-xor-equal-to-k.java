@@ -1,16 +1,25 @@
 class Solution {
     public int minOperations(int[] nums, int k) {
-        int ans = 0;
-        for (int x : nums) {
-            ans = ans ^ x;
+        int operations = 0;
+        int xor = 0;
+        for (int num : nums) {
+            xor ^= num;
         }
-        ans = ans ^ k;
-        int res = 0;
-        while (ans > 0) {
-            if ((ans & 1) != 0)
-                res++;
-            ans = ans >> 1;
+        
+        // Check if xor of elements is already k
+        if (xor == k) {
+            return 0;
         }
-        return res;
+        
+        // If not, find the xor of elements and k
+        int target = xor ^ k;
+        
+        // Count the number of set bits in the target
+        while (target > 0) {
+            operations++;
+            target &= (target - 1); // clear the rightmost set bit
+        }
+        
+        return operations;
     }
 }
